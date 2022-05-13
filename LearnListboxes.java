@@ -1,9 +1,6 @@
 package week4.day2.assignments;
 
 import java.util.List;
-
-
-
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -31,13 +28,12 @@ public class LearnListboxes {
 		Select count = new Select(driver.findElement(By.xpath("//Select[@class='dropdown']")));
 		List<WebElement> cc=count.getOptions();
 		System.out.println("The number of dropdown options are "+cc.size());
-		driver.findElement(By.xpath("(//select['multiple'])[5]")).sendKeys("Appium");
-		Select last = new Select(driver.findElement(By.xpath("(//select['multiple'])[6]")));
-		last.selectByValue("1");
-		last.selectByIndex(3);
+		
+		driver.findElement(By.xpath("(//select['multiple'])[5]")).sendKeys("Selenium");
+		WebElement lastdropdown = driver.findElement(By.xpath("(//select['multiple'])[6]"));
+		Select drop5=new Select(lastdropdown);
+		drop5.selectByIndex(2);
+		drop5.selectByValue("3");
 		
 		
-		
-		
-
 }}
